@@ -14,18 +14,18 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({
     @NamedQuery(
-            name = "getAlltasks",
-            query = "SELECT m FROM tasks AS m ORDER BY m.id DESC"
+            name = "getAllTasks",
+            query = "SELECT m FROM Task AS m ORDER BY m.id DESC"
             )
 })
 @Table(name = "tasks")
 
-public class tasks {
+public class Task {
 	// フィールド
 	@Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private int id;
 
     @Column(name = "created_at", nullable = false)
     private Timestamp created_at;
@@ -36,11 +36,11 @@ public class tasks {
     @Column(name = "content", length = 255, nullable = false)
     private String content;
 
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
